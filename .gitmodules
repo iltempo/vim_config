@@ -1,0 +1,6 @@
+[submodule "plugins/vim-powerline"]
+	path = plugins/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "fonts/SourceCodePro"]
+	path = fonts/SourceCodePro
+	url = https://github.com/ryanmcilmoyl/sourceCodePro-Powerline.git

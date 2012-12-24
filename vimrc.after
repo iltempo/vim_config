@@ -1,0 +1,20 @@
+" CtrlP Customizations
+" Map C-\ to buffer search
+if has("gui_macvim") && has("gui_running")
+  call janus#add_mapping('ctrlp', 'map', '<D-\>', ':CtrlPBuffer<CR>')
+  call janus#add_mapping('ctrlp', 'imap', '<D-\>', '<ESC>:CtrlPBuffer<CR>')
+else
+  call janus#add_mapping('ctrlp', 'map', '<C-\>', ':CtrlPBuffer<CR>')
+  call janus#add_mapping('ctrlp', 'imap', '<C-\>', '<ESC>:CtrlPBuffer<CR>')
+endif
+
+" Search by file name instead of path
+let g:ctrlp_by_filename = 1
+
+" Prevent NERDTree from opening buffer on startup
+augroup AuNERDTreeCmd
+  autocmd!
+augroup end
+
+" Use fancy characters in Powerline bar
+let g:Powerline_symbols = 'fancy'
