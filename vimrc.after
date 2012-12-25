@@ -1,3 +1,9 @@
+" Some mappings of typical typos
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 " CtrlP Customizations
 " Map C-\ to buffer search
 if has("gui_macvim") && has("gui_running")
