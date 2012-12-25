@@ -13,4 +13,4 @@ sub directory.
 
 ## Updating
 
-    cd ~/.vim_config && rake update
+    cd ~/.vim_config && rake
