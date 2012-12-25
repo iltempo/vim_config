@@ -5,9 +5,7 @@ This is my own vim configuration based on
 
 ## Installation
 
-    git clone git@github.com:iltempo/vim_config.git ~/.vim_config \
-      && cd ~/.vim_config \
-      && rake install
+    curl -Lo- http://bit.ly/vim_config | bash
 
 Install the Powerline patched [Source Code
 Pro](https://blogs.adobe.com/typblography/2012/09/source-code-pro.html) font from the `fonts/`
