@@ -4,3 +4,6 @@
 [submodule "fonts/SourceCodePro"]
 	path = fonts/SourceCodePro
 	url = https://github.com/ryanmcilmoyl/sourceCodePro-Powerline.git
+[submodule "plugins/vim-scratch"]
+	path = plugins/vim-scratch
+	url = https://github.com/duff/vim-scratch.git
