@@ -1,3 +1,7 @@
+syntax enable
+set background=dark
+colorscheme solarized
+
 " CtrlP Customizations
 " Map C-\ to buffer search
 if has("gui_macvim") && has("gui_running")
