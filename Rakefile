@@ -1,5 +1,13 @@
 ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
 
+desc "Update vim_config"
+task :update do
+  `git clean -xdf`
+  `git pull`
+  `git submodule sync`
+  `git submodule update --init`
+end
+
 desc "Update submodules"
 task :update_submodules do
   `git submodule update --init`
@@ -36,12 +44,12 @@ task :update_janus do
 end
 
 desc "Install everything"
-task :install => [
-  :update_submodules,
-  :link_config_files,
-  :link_plugins,
-  :install_janus]
+task :install => [:update_submodules,
+                  :link_config_files,
+                  :link_plugins,
+                  :install_janus]
 
 desc "Link config files"
-task :default => [:update_submodules,
-  :update_janus]
+task :default => [:update,
+                  :update_submodules,
+                  :update_janus]
