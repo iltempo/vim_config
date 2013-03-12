@@ -7,3 +7,6 @@
 [submodule "plugins/vim-scratch"]
 	path = plugins/vim-scratch
 	url = https://github.com/duff/vim-scratch.git
+[submodule "plugins/ag.vim"]
+	path = plugins/ag.vim
+	url = https://github.com/rking/ag.vim
