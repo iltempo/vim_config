@@ -13,9 +13,9 @@ task :update_submodules do
   `git submodule update --init`
 end
 
-desc "Link vim/macvim configuration files"
+desc "Link vim/macvim/tmux configuration files"
 task :link_config_files do
-  Dir['{g,}vimrc.*'].each do |file|
+  Dir['{g,}vimrc.*', 'tmux.conf'].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       ln_s(File.expand_path(file), dest)
@@ -49,7 +49,7 @@ task :install => [:update_submodules,
                   :link_plugins,
                   :install_janus]
 
-desc "Link config files"
+desc "Update everything"
 task :default => [:update,
                   :update_submodules,
                   :update_janus]
