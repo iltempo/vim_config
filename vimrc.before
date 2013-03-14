@@ -1,5 +1,4 @@
 " Disable unused plugins
-call janus#disable_plugin('nerdcommenter')
 call janus#disable_plugin('buffergator')
 
 " Command to turn hash rockets into new style Ruby hashes
