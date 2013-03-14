@@ -20,5 +20,8 @@ augroup AuNERDTreeCmd
   autocmd!
 augroup end
 
+" Allow custom GitHub repository server for :GBrowse
+let g:fugitive_github_domains = ['source.xing.com']
+
 " Use fancy characters in Powerline bar
 let g:Powerline_symbols = 'fancy'
