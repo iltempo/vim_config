@@ -33,7 +33,7 @@ end
 
 desc "Install Janus"
 task :install_janus do
-  unless Dir.exists?(File.expand_path("~/.vim/janus"))
+  unless File.directory?(File.expand_path("~/.vim/janus"))
     `curl -Lo- https://bit.ly/janus-bootstrap | bash`
   end
 end
