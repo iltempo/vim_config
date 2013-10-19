@@ -33,7 +33,7 @@ let g:Powerline_symbols = 'fancy'
 nnoremap <F9> :Dispatch<CR>
 
 " Run rspec tests through vim
-let g:rspec_command = "Dispatch zeus rspec {spec}"
+let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
