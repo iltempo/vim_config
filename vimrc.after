@@ -21,9 +21,8 @@ let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard 
 " Search by file name instead of path
 "let g:ctrlp_by_filename = 1
 
-" Use the silver searcher for grep and ctrlp
+" Use the silver searcher for grep
 set grepprg=ag\ --nogroup\ --nocolor
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Prevent NERDTree from opening buffer on startup
 augroup AuNERDTreeCmd
