@@ -18,9 +18,6 @@ endif
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
 
-" Search by file name instead of path
-"let g:ctrlp_by_filename = 1
-
 " Use the silver searcher for grep
 set grepprg=ag\ --nogroup\ --nocolor
 
@@ -28,12 +25,6 @@ set grepprg=ag\ --nogroup\ --nocolor
 augroup AuNERDTreeCmd
   autocmd!
 augroup end
-
-" Allow custom GitHub repository server for :GBrowse
-let g:fugitive_github_domains = ['source.xing.com']
-
-" Use fancy characters in Powerline bar
-let g:Powerline_symbols = 'fancy'
 
 " Run commands using dispatch
 nnoremap <F9> :Dispatch<CR>
