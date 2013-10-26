@@ -5,6 +5,9 @@ colorscheme solarized
 " Run shell commands via sh
 set shell=/bin/sh
 
+" Hide status line most of the time
+set laststatus=1
+
 " CtrlP Customizations
 " Map C-\ to buffer search
 if has("gui_macvim") && has("gui_running")
