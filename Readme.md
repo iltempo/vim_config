@@ -1,6 +1,6 @@
 # Vim Configuration
 
-My vim config make use of [Vundle](https://github.com/gmarik/vundle) to manage plugins.
+My vim config makes use of [Vundle](https://github.com/gmarik/vundle) to manage plugins.
 
 ## Installation
 
