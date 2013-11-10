@@ -1,9 +1,0 @@
-[submodule "fonts/SourceCodePro"]
-	path = fonts/SourceCodePro
-	url = https://github.com/ryanmcilmoyl/sourceCodePro-Powerline.git
-[submodule "plugins/ag.vim"]
-	path = plugins/ag.vim
-	url = https://github.com/rking/ag.vim
-[submodule "plugins/vim-rspec"]
-	path = plugins/vim-rspec
-	url = https://github.com/thoughtbot/vim-rspec.git

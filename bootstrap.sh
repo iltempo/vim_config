@@ -4,7 +4,7 @@ function die()
     exit 1
 }
 
-mkdir -p ${HOME}/.vim_config
-git clone git@github.com:iltempo/vim_config.git ${HOME}/.vim_config
-cd $HOME/.vim_config || die "Could not go into the ${HOME}/.vim_config"
+mkdir -p ${HOME}/.vim
+git clone git@github.com:iltempo/vim_config.git ${HOME}/.vim
+cd $HOME/.vim || die "Could not go into the ${HOME}/.vim"
 rake install || die "rake install failed."

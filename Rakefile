@@ -1,21 +1,8 @@
 ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
 
-desc "Update vim_config"
-task :update do
-  `git clean -xdf`
-  `git pull`
-  `git submodule sync`
-  `git submodule update --init`
-end
-
-desc "Update submodules"
-task :update_submodules do
-  `git submodule update --init`
-end
-
 desc "Link vim/macvim/tmux configuration files"
 task :link_config_files do
-  Dir['{g,}vimrc.*', 'tmux.conf'].each do |file|
+  Dir['{g,}vimrc{.*,}', 'tmux.conf'].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       ln_s(File.expand_path(file), dest)
@@ -23,33 +10,25 @@ task :link_config_files do
   end
 end
 
-desc "Link plugins"
-task :link_plugins do
-  dest = File.expand_path("~/.janus")
-  unless File.exist?(dest)
-    ln_s(File.expand_path('plugins'), dest)
-  end
+desc "Install bundles"
+task :install_bundles do
+  `vim +BundleInstall +qall`
 end
 
-desc "Install Janus"
-task :install_janus do
-  unless File.directory?(File.expand_path("~/.vim/janus"))
-    `curl -Lo- https://bit.ly/janus-bootstrap | bash`
-  end
+desc "Update .vim repository"
+task :update do
+  `git pull`
 end
 
-desc "Update Janus"
-task :update_janus do
-  `cd ~/.vim && rake update`
+desc "Update bundles"
+task :update_bundles do
+  `vim +BundleUpdate +qall`
 end
 
 desc "Install everything"
-task :install => [:update_submodules,
-                  :link_config_files,
-                  :link_plugins,
-                  :install_janus]
+task :install => [:link_config_files,
+                  :install_bundles]
 
 desc "Update everything"
 task :default => [:update,
-                  :update_submodules,
-                  :update_janus]
+                  :update_bundles]

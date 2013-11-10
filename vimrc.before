@@ -1,5 +1,0 @@
-" Disable unused plugins
-call janus#disable_plugin('buffergator')
-
-" Command to turn hash rockets into new style Ruby hashes
-command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
