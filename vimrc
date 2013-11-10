@@ -1,4 +1,5 @@
-source bundles.vim
+" Why does it have to be an explicit path here?
+source ~/.vim/bundles.vim
 
 syntax enable
 set background=dark
