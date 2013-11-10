@@ -8,6 +8,9 @@ colorscheme solarized
 " Hide status line most of the time
 set laststatus=1
 
+" Do autocompletion on tab
+imap <Tab> <C-P>
+
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
 
