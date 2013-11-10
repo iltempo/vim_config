@@ -15,7 +15,7 @@ task :install_bundles do
   `git submodule init`
   `git submodule update`
   puts 'Please install bundles by executing:'
-  puts 'vim -u bundles.vim +BundleInstall +q'
+  puts 'vim -u ~/.vim/bundles.vim +BundleInstall +q'
 end
 
 desc "Update .vim repository"
@@ -26,7 +26,7 @@ end
 desc "Update bundles"
 task :update_bundles do
   puts 'Please update bundles by executing:'
-  puts 'vim -u bundles.vim +BundleUpdate +q'
+  puts 'vim -u ~/.vim/bundles.vim +BundleUpdate +q'
 end
 
 desc "Install everything"
