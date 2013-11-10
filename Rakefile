@@ -12,7 +12,9 @@ end
 
 desc "Install bundles"
 task :install_bundles do
-  `vim +BundleInstall +qall`
+  `git submodule init`
+  `git submodule update`
+  `vim -u bundles.vim +BundleInstall +q`
 end
 
 desc "Update .vim repository"
@@ -22,7 +24,7 @@ end
 
 desc "Update bundles"
 task :update_bundles do
-  `vim +BundleUpdate +qall`
+  `vim -u bundles.vim +BundleUpdate +q`
 end
 
 desc "Install everything"
