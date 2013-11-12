@@ -28,8 +28,19 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-" Do autocompletion on tab
-imap <Tab> <C-P>
+function! s:setupTextFormat()
+  set wrap
+  set linebreak
+  set textwidth=80
+  set nolist
+  set formatoptions=+t
+  set spell spelllang=de,en
+  set insertmode
+endfunction
+
+" Set up line wrapping in text files
+au BufRead,BufNewFile *.{md,markdown,mdown,txt} setf text
+au FileType text call s:setupTextFormat()
 
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
