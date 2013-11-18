@@ -31,11 +31,10 @@ set smartcase   " ... unless they contain at least one capital letter
 function! s:setupTextFormat()
   set wrap
   set linebreak
-  set textwidth=80
+  set textwidth=120
   set nolist
-  set formatoptions=+t
+  set formatoptions+=taw
   set spell spelllang=de,en
-  set insertmode
 endfunction
 
 " Set up line wrapping in text files
