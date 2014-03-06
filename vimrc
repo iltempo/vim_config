@@ -31,7 +31,7 @@ set smartcase   " ... unless they contain at least one capital letter
 function! s:setupTextFormat()
   set wrap
   set linebreak
-  set textwidth=120
+  set textwidth=88
   set nolist
   set formatoptions+=taw
   set spell spelllang=de,en
