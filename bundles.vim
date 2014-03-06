@@ -17,6 +17,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on     " required!
 "
