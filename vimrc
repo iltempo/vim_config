@@ -51,6 +51,9 @@ set grepprg=ag\ --nogroup\ --nocolor
 " Command to turn hash rockets into new style Ruby hashes
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
+" Allow vim fugitive :Gbrowse on XING GitHub Enterprise
+let g:fugitive_github_domains = ['source.xing.com']
+
 " Run rspec tests through vim
 let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
