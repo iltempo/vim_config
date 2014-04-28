@@ -21,6 +21,7 @@ end
 desc "Update .vim repository"
 task :update do
   `git pull`
+  `git submodule update`
 end
 
 desc "Update bundles"
