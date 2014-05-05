@@ -39,7 +39,7 @@ endfunction
 
 " Set up line wrapping in text files
 au BufRead,BufNewFile *.{md,markdown,mdown,txt} setf text
-au FileType {text,markdown,mail} call s:setupTextFormat()
+au FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
 au FileType {qf} set wrap
 
 " Use git for file listing. That way git ignored files will not be shown.
