@@ -63,3 +63,4 @@ map <Leader>l :call RunLastSpec()<CR>
 " Hard mode settings
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 let g:HardMode_level = 'wannabe'
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
