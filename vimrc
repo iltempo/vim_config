@@ -38,9 +38,10 @@ function! s:setupTextFormat()
 endfunction
 
 " Set up line wrapping in text files
-au BufRead,BufNewFile *.{md,markdown,mdown,txt} setf text
-au FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
-au FileType {qf} set wrap
+autocmd BufRead,BufNewFile *.{txt} :set filetype=text
+autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
+autocmd FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
+autocmd FileType {qf} set wrap
 
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
