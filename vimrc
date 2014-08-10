@@ -65,3 +65,6 @@ map <Leader>l :call RunLastSpec()<CR>
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" Matchit is needed for vim-textobj-rubyblock
+runtime macros/matchit.vim
