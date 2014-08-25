@@ -22,6 +22,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'wikitopian/hardmode'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on     " required!
 "
