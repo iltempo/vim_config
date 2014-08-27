@@ -1,0 +1,12 @@
+[core]
+	excludesfile = ~/.gitignore
+[include]
+	path = ~/.config/git/user
+	path = ~/.config/git/github
+[push]
+	default = simple
+[alias]
+	st = status
+	co = checkout
+	cp = commit -p
+	lg = !tig
