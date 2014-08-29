@@ -56,7 +56,7 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 let g:fugitive_github_domains = ['source.xing.com']
 
 " Run rspec tests through vim
-let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+let g:rspec_command = "compiler rspec | Make rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
