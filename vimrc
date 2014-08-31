@@ -68,3 +68,8 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Matchit is needed for vim-textobj-rubyblock
 runtime macros/matchit.vim
+
+" Source local configuration if existing
+if filereadable(expand("~/.vimrc.local"))
+  source $HOME/.vimrc.local
+endif
