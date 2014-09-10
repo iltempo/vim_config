@@ -5,6 +5,6 @@ function die()
 }
 
 mkdir -p ${HOME}/.vim
-git clone git@github.com:iltempo/vim_config.git ${HOME}/.vim
+git clone https://github.com/iltempo/vim_config.git ${HOME}/.vim
 cd $HOME/.vim || die "Could not go into the ${HOME}/.vim"
 rake install || die "rake install failed."
