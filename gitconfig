@@ -10,3 +10,5 @@
 	co = checkout
 	cp = commit -p
 	lg = !tig
+[credential]
+	helper = osxkeychain
