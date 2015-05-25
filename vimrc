@@ -43,6 +43,9 @@ autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
 autocmd FileType {qf} set wrap
 
+" Set MacVim font
+set guifont=Monaco:h14
+
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
 
