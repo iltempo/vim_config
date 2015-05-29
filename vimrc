@@ -28,6 +28,12 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+" Enable preview mode in netrw using p key.
+let g:netrw_preview = 1
+
+" Don't show swap files in netrw.
+let g:netrw_list_hide= '.swp$'
+
 function! s:setupTextFormat()
   set wrap
   set linebreak
