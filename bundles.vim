@@ -24,6 +24,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'fatih/vim-go'
+Bundle 'ngmy/vim-rubocop'
 
 filetype plugin indent on     " required!
 "
