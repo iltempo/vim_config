@@ -25,6 +25,8 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'fatih/vim-go'
 Bundle 'ngmy/vim-rubocop'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-colorscheme-switcher'
 
 filetype plugin indent on     " required!
 "
