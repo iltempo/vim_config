@@ -3,7 +3,7 @@ source ~/.vim/bundles.vim
 
 syntax enable
 set background=dark
-colorscheme jellybeans
+colorscheme atom
 
 set laststatus=1      " Hide status line
 set ruler             " Show line and column number
@@ -37,7 +37,8 @@ let g:netrw_list_hide= '.swp$'
 function! s:setupTextFormat()
   set wrap
   set linebreak
-  set textwidth=88
+  set textwidth=0
+  set wrapmargin=0
   set nolist
   set formatoptions+=taw
   set spell spelllang=de,en
@@ -50,7 +51,7 @@ autocmd FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
 autocmd FileType {qf} set wrap
 
 " Set MacVim font
-set guifont=Monaco:h14
+set guifont=Monaco:h17
 
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
