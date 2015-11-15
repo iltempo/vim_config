@@ -18,7 +18,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'wikitopian/hardmode'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -27,7 +26,6 @@ Bundle 'fatih/vim-go'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-colorscheme-switcher'
-
 Bundle 'rizzatti/dash.vim'
 
 filetype plugin indent on     " required!
