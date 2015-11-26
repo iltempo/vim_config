@@ -83,8 +83,30 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 runtime macros/matchit.vim
 
 " Writing setup
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+function! s:goyo_enter()
+  silent !tmux set status off
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  Pencil
+  colorscheme pencil
+  set background=light
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  PencilOff
+  colorscheme atom
+  set background=dark
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))

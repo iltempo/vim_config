@@ -30,6 +30,7 @@ Bundle 'rizzatti/dash.vim'
 
 " Writing bundles
 Bundle 'reedes/vim-pencil'
+Bundle 'reedes/vim-colors-pencil'
 Bundle 'junegunn/goyo.vim'
 Bundle 'junegunn/limelight.vim'
 
