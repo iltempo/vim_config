@@ -28,6 +28,11 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-colorscheme-switcher'
 Bundle 'rizzatti/dash.vim'
 
+" Writing bundles
+Bundle 'reedes/vim-pencil'
+Bundle 'junegunn/goyo.vim'
+Bundle 'junegunn/limelight.vim'
+
 filetype plugin indent on     " required!
 "
 " Brief help
