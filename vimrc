@@ -34,21 +34,26 @@ let g:netrw_preview = 1
 " Don't show swap files in netrw.
 let g:netrw_list_hide= '.swp$'
 
-function! s:setupTextFormat()
-  set wrap
-  set linebreak
-  set textwidth=0
-  set wrapmargin=0
-  set nolist
-  set formatoptions+=taw
-  set spell spelllang=de,en
-endfunction
-
-" Set up line wrapping in text files
+" Detect some specific file types correctly
 autocmd BufRead,BufNewFile *.{txt} :set filetype=text
 autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
-autocmd FileType {text,markdown,mail,gitcommit} call s:setupTextFormat()
-autocmd FileType {qf} set wrap
+
+" Set up spell checking
+autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
+
+function! s:setupSpell()
+  set spell spelllang=en,de
+  set spell
+endfunction
+
+" Set up pencil
+let g:pencil#wrapModeDefault = "soft"
+
+augroup pencil
+  autocmd!
+  autocmd FileType {text,markdown,mail,gitcommit} call pencil#init()
+augroup END
+
 
 " Set MacVim font
 set guifont=Fira\ Code:h18,Monaco:h17
@@ -84,29 +89,32 @@ runtime macros/matchit.vim
 
 " Writing setup
 function! s:goyo_enter()
-  silent !tmux set status off
   set noshowmode
   set noshowcmd
   set scrolloff=999
+  let g:limelight_conceal_ctermfg = "gray"
   Limelight
-  Pencil
   colorscheme pencil
   set background=light
 endfunction
 
 function! s:goyo_leave()
-  silent !tmux set status on
   set showmode
   set showcmd
   set scrolloff=5
   Limelight!
-  PencilOff
   colorscheme atom
   set background=dark
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+augroup AutomaticGoyo
+  autocmd!
+  autocmd FileType * :Goyo!
+  autocmd FileType {text,markdown,gitcommit} :Goyo
+augroup END
 
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))
