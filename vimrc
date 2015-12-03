@@ -61,6 +61,9 @@ if exists("&macligatures")
   set macligatures
 endif
 
+" Hide GUI toolbar
+set guioptions-=T
+
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
 
