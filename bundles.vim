@@ -26,6 +26,7 @@ Bundle 'ngmy/vim-rubocop'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-colorscheme-switcher'
 Bundle 'rizzatti/dash.vim'
+Bundle 'cespare/vim-toml'
 
 " Writing bundles
 Bundle 'reedes/vim-pencil'
