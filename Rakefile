@@ -2,7 +2,7 @@ ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
 
 desc "Link vim/macvim/tmux configuration files"
 task :link_config_files do
-  Dir['{g,}vimrc{.*,}', 'tmux.conf', 'git{ignore,config}'].each do |file|
+  Dir['{g,n,}vimrc{.*,}', 'tmux.conf', 'git{ignore,config}'].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       ln_s(File.expand_path(file), dest)
