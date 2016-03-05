@@ -8,6 +8,17 @@ task :link_config_files do
       ln_s(File.expand_path(file), dest)
     end
   end
+
+  nvim_dir = File.expand_path('~/.config/nvim')
+  unless Dir.exist?(nvim_dir)
+    Dir.mkdir(nvim_dir)
+  end
+
+  nvim_conf = File.expand_path('~/.config/nvim/init.vim')
+  vimrc = File.expand_path('vimrc')
+  unless File.symlink?(nvim_conf)
+    ln_s(vimrc, nvim_conf)
+  end
 end
 
 desc "Install bundles"
