@@ -42,7 +42,7 @@ autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
 
 function! s:setupSpell()
-  set spell spelllang=en,de
+  set spell spelllang=en_us,de_de
   set spell
 endfunction
 
