@@ -28,6 +28,7 @@ Bundle 'xolox/vim-colorscheme-switcher'
 Bundle 'rizzatti/dash.vim'
 Bundle 'cespare/vim-toml'
 Bundle 'rust-lang/rust.vim'
+Bundle 'scrooloose/syntastic'
 
 " Writing bundles
 Bundle 'reedes/vim-pencil'
