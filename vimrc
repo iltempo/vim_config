@@ -28,6 +28,9 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+" Resolve issue with slow escape speed in nvim
+set ttimeoutlen=10
+
 " Enable preview mode in netrw using p key.
 let g:netrw_preview = 1
 
