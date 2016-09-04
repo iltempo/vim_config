@@ -15,9 +15,9 @@ set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 
 " List chars
-set list                          " Show invisible characters
+set nolist                        " Hide invisible characters, enable via :set list
 set listchars=""                  " Reset the listchars
-set listchars=tab:»·              " a tab should display as "⇾ "
+set listchars=tab:»·              " a tab should display as "»·"
 set listchars+=trail:·            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
 set listchars+=precedes:<         " The character to show in the last column when wrap is
