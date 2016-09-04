@@ -126,3 +126,6 @@ augroup END
 if filereadable(expand("~/.vimrc.local"))
   source $HOME/.vimrc.local
 endif
+
+" Rust Programming Language
+let g:rustfmt_autosave=1
