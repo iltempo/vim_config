@@ -37,6 +37,9 @@ let g:netrw_preview = 1
 " Don't show swap files in netrw.
 let g:netrw_list_hide= '.swp$'
 
+" Use system clipboard by default
+set clipboard=unnamed
+
 " Detect some specific file types correctly
 autocmd BufRead,BufNewFile *.{txt} :set filetype=text
 autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
