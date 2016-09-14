@@ -3,7 +3,7 @@ source ~/.vim/bundles.vim
 
 syntax enable
 set background=dark
-colorscheme kalisi
+colorscheme hybrid
 
 set laststatus=1      " Hide status line
 set ruler             " Show line and column number
