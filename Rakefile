@@ -24,8 +24,7 @@ end
 
 desc "Install bundles"
 task :install_bundles do
-  `git submodule init`
-  `git submodule update`
+  `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
   puts 'Please install bundles by executing:'
   puts 'vim -u ~/.vim/bundles.vim +BundleInstall +q'
 end
