@@ -9,7 +9,7 @@ task :link_config_files do
     end
   end
 
-  `mkdir -p .config/nvim`
+  `mkdir -p ~/.config/nvim`
   nvim_dir = File.expand_path('~/.config/nvim')
   unless Dir.exist?(nvim_dir)
     Dir.mkdir(nvim_dir)
