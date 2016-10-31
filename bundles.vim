@@ -31,6 +31,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'keith/swift'
 
 " Writing bundles
 Plugin 'reedes/vim-pencil'
