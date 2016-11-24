@@ -49,15 +49,6 @@ function! s:setupSpell()
   set spell
 endfunction
 
-" Set up pencil
-let g:pencil#wrapModeDefault = "soft"
-
-augroup pencil
-  autocmd!
-  autocmd FileType {text,markdown,mail,gitcommit} call pencil#init()
-augroup END
-
-
 " Set MacVim font
 set guifont=Fira\ Code:h18,Monaco:h17
 if exists("&macligatures")
@@ -92,35 +83,6 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Matchit is needed for vim-textobj-rubyblock
 runtime macros/matchit.vim
-
-" Writing setup
-function! s:goyo_enter()
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  let g:limelight_conceal_ctermfg = "gray"
-  Limelight
-  colorscheme pencil
-  set background=light
-endfunction
-
-function! s:goyo_leave()
-  set showmode
-  set showcmd
-  set scrolloff=5
-  Limelight!
-  colorscheme atom
-  set background=dark
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-augroup AutomaticGoyo
-  autocmd!
-  autocmd FileType * :Goyo!
-  autocmd FileType {text,markdown,gitcommit} :Goyo
-augroup END
 
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))

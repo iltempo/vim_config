@@ -33,12 +33,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'keith/swift'
 
-" Writing bundles
-Plugin 'reedes/vim-pencil'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
