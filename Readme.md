@@ -10,3 +10,8 @@ My vim config makes use of [Vundle](https://github.com/gmarik/vundle) to manage 
 ## Updating
 
     cd ~/.vim && rake
+
+## Configuration for JavaScript development
+
+    brew install node
+    npm install standard --global
