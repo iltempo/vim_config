@@ -33,6 +33,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'keith/swift'
 Plugin 'pangloss/vim-javascript'
+Plugin 'bwmcadams/vim-deckset'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
