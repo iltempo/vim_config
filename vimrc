@@ -82,10 +82,6 @@ let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Some Syntastic display configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -93,8 +89,9 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic checks and code formatting for JavaScript
 let g:syntastic_javascript_checkers = ['standard']
-autocmd bufwritepost *.js silent !standard --fix %
-set autoread
+" NOTE: This breaks displaying syntastic syntax checking and markers
+"autocmd bufwritepost *.js silent !standard --fix %
+"set autoread
 
 " Matchit is needed for vim-textobj-rubyblock
 runtime macros/matchit.vim
