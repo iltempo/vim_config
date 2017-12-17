@@ -70,12 +70,6 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 " Allow vim fugitive :Gbrowse on XING GitHub Enterprise
 let g:fugitive_github_domains = ['source.xing.com']
 
-" Run rspec tests through vim
-let g:rspec_command = "compiler rspec | Make rspec {spec}"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-
 " Hard mode settings
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 let g:HardMode_level = 'wannabe'
@@ -93,13 +87,8 @@ let g:syntastic_javascript_checkers = ['standard']
 "autocmd bufwritepost *.js silent !standard --fix %
 "set autoread
 
-" Matchit is needed for vim-textobj-rubyblock
-runtime macros/matchit.vim
-
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))
   source $HOME/.vimrc.local
 endif
 
-" Rust Programming Language
-let g:rustfmt_autosave=1
