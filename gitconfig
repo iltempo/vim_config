@@ -12,3 +12,11 @@
 	lg = !tig
 [credential]
 	helper = osxkeychain
+[user]
+	email = alexxx@iltempo.de
+	name = Alexander Greim
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

@@ -26,6 +26,8 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'keith/swift'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'bwmcadams/vim-deckset'
 
 " All of your Plugins must be added before the following line
