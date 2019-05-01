@@ -11,9 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails.git'
-Plugin 'tpope/vim-surround'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -22,12 +19,9 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'keith/swift'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
 Plugin 'bwmcadams/vim-deckset'
 
 " All of your Plugins must be added before the following line
