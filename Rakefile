@@ -20,6 +20,18 @@ task :link_config_files do
   unless File.symlink?(nvim_conf)
     ln_s(vimrc, nvim_conf)
   end
+
+  fish_conf = File.expand_path('~/.config/fish')
+  fish_dir = File.expand_path('config/fish/')
+  unless File.symlink?(fish_conf)
+    ln_s(fish_dir, fish_conf)
+  end
+
+  alacritty_conf = File.expand_path('~/.config/alacritty')
+  alacritty_dir = File.expand_path('config/alacritty/')
+  unless File.symlink?(alacritty_conf)
+    ln_s(alacritty_dir, alacritty_conf)
+  end
 end
 
 desc "Install bundles"
