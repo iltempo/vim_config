@@ -4,8 +4,10 @@ My vim config makes use of [Vundle](https://github.com/gmarik/vundle) to manage 
 
 ## Installation
 
-    brew install neovim/neovim/neovim tmux reattach-to-user-namespace
+    brew install neovim tmux fish
     curl -Lo- http://bit.ly/vim_config | bash
+
+    chsh -s /usr/local/bin/fish
 
 ## Updating
 
