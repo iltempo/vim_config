@@ -1,8 +1,6 @@
-ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
-
 desc "Link vim/macvim/tmux configuration files"
 task :link_config_files do
-  Dir['{g,}vimrc{.*,}', 'tmux.conf', 'git{ignore,config}'].each do |file|
+  Dir['{g,}vimrc{.*,}', 'tmux.conf'].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       ln_s(File.expand_path(file), dest)
@@ -31,6 +29,25 @@ task :link_config_files do
   alacritty_dir = File.expand_path('config/alacritty/')
   unless File.symlink?(alacritty_conf)
     ln_s(alacritty_dir, alacritty_conf)
+  end
+
+  git_conf_legacy = File.expand_path('~/.gitconfig')
+  if File.exist?(git_conf_legacy)
+    puts 'Old git config file exists at ~/.gitconfig. Please remove and run again.'
+    exit 1
+  end
+
+  git_dir = File.expand_path('~/.config/git/')
+  unless Dir.exist?(git_dir)
+    Dir.mkdir(git_dir)
+  end
+  Dir.chdir("config/") do
+    Dir['git/*'].each do |file|
+     dest = File.expand_path("~/.config/#{file}")
+     unless File.exist?(dest)
+       ln_s(File.expand_path(file), dest)
+     end
+   end
   end
 end
 
