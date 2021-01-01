@@ -7,6 +7,13 @@ task :link_config_files do
     end
   end
 
+  Dir['tmux.local.conf'].each do |file|
+    dest = File.expand_path("~/.#{file}")
+    unless File.exist?(dest)
+      cp(File.expand_path(file), dest)
+    end
+  end
+
   `mkdir -p ~/.config/nvim`
   nvim_dir = File.expand_path('~/.config/nvim')
   unless Dir.exist?(nvim_dir)
@@ -43,11 +50,11 @@ task :link_config_files do
   end
   Dir.chdir("config/") do
     Dir['git/*'].each do |file|
-     dest = File.expand_path("~/.config/#{file}")
-     unless File.exist?(dest)
-       ln_s(File.expand_path(file), dest)
-     end
-   end
+      dest = File.expand_path("~/.config/#{file}")
+      unless File.exist?(dest)
+        ln_s(File.expand_path(file), dest)
+      end
+    end
   end
 end
 
