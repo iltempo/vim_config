@@ -86,6 +86,12 @@ let g:syntastic_javascript_checkers = ['standard']
 "autocmd bufwritepost *.js silent !standard --fix %
 "set autoread
 
+" Prevent markdown folding
+let g:vim_markdown_folding_disabled = 1
+
+" Enable Goyo by default in markdown files
+autocmd FileType {markdown} :Goyo
+
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))
   source $HOME/.vimrc.local
