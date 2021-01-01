@@ -12,3 +12,5 @@
 	lg = !tig
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = false
