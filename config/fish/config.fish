@@ -9,3 +9,5 @@ set -x PATH $PATH $GOBIN
 set -x PATH $PATH $HOME/.cargo/bin
 
 set -x PATH "/usr/local/sbin" $PATH
+
+source ~/.config/fish/config.local.fish

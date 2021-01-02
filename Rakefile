@@ -32,6 +32,13 @@ task :link_config_files do
     ln_s(fish_dir, fish_conf)
   end
 
+  Dir['config.local.fish'].each do |file|
+    dest = File.expand_path("~/.config/fish/#{file}")
+    unless File.exist?(dest)
+      cp(File.expand_path(file), dest)
+    end
+  end
+
   alacritty_conf = File.expand_path('~/.config/alacritty')
   alacritty_dir = File.expand_path('config/alacritty/')
   unless File.symlink?(alacritty_conf)
