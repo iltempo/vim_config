@@ -79,7 +79,10 @@ end
 
 desc "Install bundles"
 task :install_bundles do
-  `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+  vundle_dir = File.expand_path('~/.vim/bundle/Vundle.vim')
+  unless Dir.exist?(vundle_dir)
+    `git clone https://github.com/VundleVim/Vundle.vim.git #{vundle_dir}`
+  end
   puts 'Please install bundles by executing:'
   puts 'vim -u ~/.vim/bundles.vim +BundleInstall +q'
 end
