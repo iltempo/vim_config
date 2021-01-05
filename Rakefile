@@ -105,4 +105,5 @@ task :install => [:link_config_files,
 
 desc "Update everything"
 task :default => [:update,
-                  :update_bundles]
+                  :update_bundles,
+                  :install]
