@@ -1,8 +1,9 @@
 [core]
 	excludesfile = ~/.config/git/ignore
 [include]
-	path = ~/.config/git/user
-	path = ~/.config/git/github
+	path = ~/.config/git/user.local
+	path = ~/.config/git/codesign.local
+	path = ~/.config/git/github.local
 [push]
 	default = simple
 [alias]
