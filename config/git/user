@@ -1,5 +1,7 @@
 [user]
-        email = alex@xing.com
-        signingkey = AAAAAAA
+        name = Alexander Greim
+        email = alexxx@iltempo.de
+        signingkey = 0EEFCD1FBF64E68F0E0CDF0C23C966983CF74703
 
-[asdfasdfas]
+[commit]
+        gpgsign = true
