@@ -12,7 +12,7 @@ function fish_default_mode_prompt --description "Display the default mode for th
                 set_color --bold red
                 echo 'N'
             case insert
-                set_color --bold green
+                set_color
                 echo 'I'
             case replace_one
                 set_color --bold green
