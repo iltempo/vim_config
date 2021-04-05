@@ -10,19 +10,19 @@ function fish_default_mode_prompt --description "Display the default mode for th
         switch $fish_bind_mode
             case default
                 set_color --bold red
-                echo 'N'
+                echo 'n'
             case insert
                 set_color
-                echo 'I'
+                echo 'i'
             case replace_one
                 set_color --bold green
-                echo 'R'
+                echo 'r'
             case replace
                 set_color --bold cyan
-                echo 'R'
+                echo 'r'
             case visual
                 set_color --bold magenta
-                echo 'V'
+                echo 'v'
         end
         set_color normal
         echo -n ' '
