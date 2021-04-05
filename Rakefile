@@ -33,7 +33,7 @@ task :link_config_files do
   end
 
   Dir['config.local.fish'].each do |file|
-    dest = File.expand_path("~/.config/fish/#{file}")
+    dest = File.expand_path("~/.config/fish/conf.d/#{file}")
     unless File.exist?(dest)
       cp(File.expand_path(file), dest)
     end
