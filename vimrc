@@ -1,8 +1,36 @@
+:set filetype=vim
+
 " Why does it have to be an explicit path here?
 source ~/.vim/bundles.vim
 
 syntax enable
-colorscheme default
+colorscheme random
+filetype plugin on
+filetype on
+
+let b:ale_fixers = {'ruby': ['rubocop']}
+let g:ale_fix_on_save=1
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 set laststatus=1      " Hide status line
 set ruler             " Show line and column number
@@ -39,6 +67,7 @@ set clipboard=unnamed
 " Detect some specific file types correctly
 autocmd BufRead,BufNewFile *.{txt} :set filetype=text
 autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
+autocmd BufRead,BufNewFile *.{rb} :set filetype=ruby
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
