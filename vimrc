@@ -4,12 +4,17 @@
 source ~/.vim/bundles.vim
 
 syntax enable
-colorscheme random
+colorscheme antares
 filetype plugin on
 filetype on
 
-let b:ale_fixers = {'ruby': ['rubocop']}
+let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_column_always = 1
 let g:ale_fix_on_save=1
+
+highlight ExtraWhitespace ctermbg=white guibg=white
+match ExtraWhitespace /\s\+$/
 
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
@@ -23,7 +28,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
 nmap <silent> <leader>t :TestNearest<CR>
