@@ -10,9 +10,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'tpope/vim-vinegar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rking/ag.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'wikitopian/hardmode'
 Plugin 'flazz/vim-colorschemes'

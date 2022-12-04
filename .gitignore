@@ -1,3 +1,4 @@
 spell/*
 .netrwhist
 config/git/*.local
+config/fish/completions/
