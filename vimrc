@@ -11,7 +11,9 @@ filetype on
 let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
+let g:ale_lint_on_save = 1
 let g:ale_fix_on_save=1
+let g:ale_ruby_rubocop_options = '--auto-correct'
 
 highlight ExtraWhitespace ctermbg=white guibg=white
 match ExtraWhitespace /\s\+$/
@@ -70,9 +72,10 @@ let g:netrw_list_hide= '.swp$'
 set clipboard=unnamed
 
 " Detect some specific file types correctly
+autocmd BufRead,BufNewFile .vimrc set filetype=vim
 autocmd BufRead,BufNewFile *.{txt} :set filetype=text
 autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
-autocmd BufRead,BufNewFile *.{rb} :set filetype=ruby
+autocmd BufRead,BufNewFile *.{rb,erb,haml} :set filetype=ruby
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
@@ -93,6 +96,8 @@ set guioptions-=T
 
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
+" Invoke buffer listing with CTRL+L
+nnoremap <C-l> :CtrlPBuffer<cr>
 
 " Use the silver searcher for grep
 set grepprg=ag\ --nogroup\ --nocolor
