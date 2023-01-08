@@ -75,7 +75,9 @@ set clipboard=unnamed
 autocmd BufRead,BufNewFile .vimrc set filetype=vim
 autocmd BufRead,BufNewFile *.{txt} :set filetype=text
 autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
-autocmd BufRead,BufNewFile *.{rb,erb,haml} :set filetype=ruby
+autocmd BufRead,BufNewFile *.{rb,erb} :set filetype=ruby
+autocmd BufRead,BufNewFile *.{haml} :set filetype=haml
+autocmd BufRead,BufNewFile *.{js,jsx} :set filetype=javascript
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
