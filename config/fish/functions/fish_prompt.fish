@@ -1,7 +1,7 @@
 # Options
-set __fish_git_prompt_show_informative_status
-set __fish_git_prompt_showcolorhints
-set __fish_git_prompt_showupstream "informative"
+set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_showcolorhints 'yes'
+set __fish_git_prompt_showupstream 'informative'
 
 # Colors
 set green (set_color green)
