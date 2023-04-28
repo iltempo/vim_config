@@ -8,7 +8,7 @@ colorscheme antares
 filetype plugin on
 filetype on
 
-let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
+let b:ale_fixers = {'ruby': ['rubocop'], 'haml': ['haml-lint'], 'javascript': ['jslint']}
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_save = 1
