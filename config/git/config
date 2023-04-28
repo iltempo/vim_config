@@ -29,3 +29,5 @@
 	smudge = git-lfs smudge -- %f
 [merge]
 	tool = vimdiff
+[gpg]
+	program = gpg2
