@@ -16,6 +16,8 @@ Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'wikitopian/hardmode'
+Plugin 'tpope/vim-surround'
+
 Plugin 'flazz/vim-colorschemes'
 Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-misc'
