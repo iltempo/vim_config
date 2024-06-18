@@ -12,18 +12,18 @@ colorscheme antares
 " == Text editing with Goyo and Limelight ==
 
 " Enable Goyo by default in markdown files
-"autocmd FileType markdown Goyo
+  "au FileType markdown Goyo
 
 let g:limelight_default_coefficient = 0.5
+let g:goyo_width = 80
+let g:goyo_height = '85%'
+let g:goyo_linenr = 0
 
 function! s:goyo_enter()
-  set wrap
   let b:quitting = 0
   let b:quitting_bang = 0
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-
-  Limelight
 endfunction
 
 function! s:goyo_leave()
@@ -39,6 +39,9 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 nmap <silent> <leader>m :Goyo<CR>
 
@@ -110,7 +113,6 @@ set clipboard=unnamed
 " Detect some specific file types correctly
 autocmd BufRead,BufNewFile .vimrc setfiletype vim
 autocmd BufRead,BufNewFile *.{txt} setfiletype text
-autocmd BufRead,BufNewFile *.{md,markdown,mdown} setfiletype markdown
 autocmd BufRead,BufNewFile *.{rb,erb,rake} setfiletype ruby
 autocmd BufRead,BufNewFile *.{haml} setfiletype haml
 autocmd BufRead,BufNewFile *.{js,jsx} setfiletype javascript
@@ -125,6 +127,7 @@ autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
 function! s:setupSpell()
   set spell spelllang=en_us,de_de
   set spell
+  set wrap
 endfunction
 
 " Use git for file listing. That way git ignored files will not be shown.
