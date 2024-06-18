@@ -45,18 +45,6 @@ task :link_config_files do
     ln_s(alacritty_dir, alacritty_conf_dir)
   end
 
-  host_os = Gem::Platform.local.os
-  alacritty_os_conf = File.expand_path("~/.config/alacritty/alacritty.#{host_os}.yml")
-  unless File.exist?(alacritty_os_conf)
-    puts "Alacritty configuration file for #{host_os} not found."
-    exit 1
-  end
-
-  alacritty_conf = File.expand_path('config/alacritty/alacritty.yml')
-  unless File.symlink?(alacritty_conf)
-    ln_s(alacritty_os_conf, alacritty_conf)
-  end
-
   git_conf_legacy = File.expand_path('~/.gitconfig')
   if File.exist?(git_conf_legacy)
     puts 'Old git config file exists at ~/.gitconfig. Please remove and run again.'
