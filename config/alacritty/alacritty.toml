@@ -5,9 +5,6 @@ size = 15.0
 family = "Jetbrains Mono"
 style = "Regular"
 
-[shell]
-program = "/opt/homebrew/bin/zsh"
-
 [window.padding]
 x = 6
 y = 2
