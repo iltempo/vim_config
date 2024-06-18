@@ -124,7 +124,7 @@ function! s:setupSpell()
 endfunction
 
 " Use git for file listing. That way git ignored files will not be shown.
-let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " Invoke buffer listing with CTRL+L
 nnoremap <C-l> :CtrlPBuffer<cr>
 
