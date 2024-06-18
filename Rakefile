@@ -26,19 +26,6 @@ task :link_config_files do
     ln_s(vimrc, nvim_conf)
   end
 
-  fish_conf = File.expand_path('~/.config/fish')
-  fish_dir = File.expand_path('config/fish/')
-  unless File.symlink?(fish_conf)
-    ln_s(fish_dir, fish_conf)
-  end
-
-  Dir['config.local.fish'].each do |file|
-    dest = File.expand_path("~/.config/fish/conf.d/#{file}")
-    unless File.exist?(dest)
-      cp(File.expand_path(file), dest)
-    end
-  end
-
   alacritty_conf_dir = File.expand_path('~/.config/alacritty')
   alacritty_dir = File.expand_path('config/alacritty/')
   unless File.symlink?(alacritty_conf_dir)
