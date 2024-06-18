@@ -116,10 +116,6 @@ autocmd BufRead,BufNewFile *.{txt} setfiletype text
 autocmd BufRead,BufNewFile *.{rb,erb,rake} setfiletype ruby
 autocmd BufRead,BufNewFile *.{haml} setfiletype haml
 autocmd BufRead,BufNewFile *.{js,jsx} setfiletype javascript
-autocmd BufRead,BufNewFile [Tt]odo.txt setfiletype todo
-autocmd BufRead,BufNewFile *.[Tt]odo.txt setfiletype todo
-autocmd BufRead,BufNewFile [Dd]one.txt setfiletype todo
-autocmd BufRead,BufNewFile *.[Dd]one.txt setfiletype todo
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
