@@ -108,16 +108,16 @@ let g:netrw_list_hide= '.swp$'
 set clipboard=unnamed
 
 " Detect some specific file types correctly
-autocmd BufRead,BufNewFile .vimrc set filetype=vim
-autocmd BufRead,BufNewFile *.{txt} :set filetype=text
-autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
-autocmd BufRead,BufNewFile *.{rb,erb,rake} :set filetype=ruby
-autocmd BufRead,BufNewFile *.{haml} :set filetype=haml
-autocmd BufRead,BufNewFile *.{js,jsx} :set filetype=javascript
-autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo
-autocmd BufNewFile,BufRead *.[Tt]odo.txt set filetype=todo
-autocmd BufNewFile,BufRead [Dd]one.txt set filetype=todo
-autocmd BufNewFile,BufRead *.[Dd]one.txt set filetype=todo
+autocmd BufRead,BufNewFile .vimrc setfiletype vim
+autocmd BufRead,BufNewFile *.{txt} setfiletype text
+autocmd BufRead,BufNewFile *.{md,markdown,mdown} setfiletype markdown
+autocmd BufRead,BufNewFile *.{rb,erb,rake} setfiletype ruby
+autocmd BufRead,BufNewFile *.{haml} setfiletype haml
+autocmd BufRead,BufNewFile *.{js,jsx} setfiletype javascript
+autocmd BufRead,BufNewFile [Tt]odo.txt setfiletype todo
+autocmd BufRead,BufNewFile *.[Tt]odo.txt setfiletype todo
+autocmd BufRead,BufNewFile [Dd]one.txt setfiletype todo
+autocmd BufRead,BufNewFile *.[Dd]one.txt setfiletype todo
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
