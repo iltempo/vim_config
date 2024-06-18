@@ -27,9 +27,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'bwmcadams/vim-deckset'
 
+Plugin 'freitass/todo.txt-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'

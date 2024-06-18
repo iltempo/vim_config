@@ -4,15 +4,48 @@
 source ~/.vim/bundles.vim
 
 syntax enable
-colorscheme antares
 filetype plugin on
 filetype on
 
-let b:ale_fixers = {'ruby': ['rubocop'], 'haml': ['haml-lint'], 'javascript': ['jslint']}
+colorscheme antares
+
+" Enable Goyo by default in markdown files
+"autocmd FileType markdown Goyo
+
+" Start Limelight with Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+let g:limelight_conceal_ctermfg = 'gray'
+
+let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save=1
+let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--auto-correct'
 
 highlight ExtraWhitespace ctermbg=white guibg=white
@@ -55,7 +88,6 @@ set listchars=tab:»·              " a tab should display as "»·"
 set listchars+=trail:·            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
 set listchars+=precedes:<         " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the left of the screen
 
 set hlsearch    " highlight matches
 set incsearch   " incremental searching
@@ -78,6 +110,10 @@ autocmd BufRead,BufNewFile *.{md,markdown,mdown} :set filetype=markdown
 autocmd BufRead,BufNewFile *.{rb,erb} :set filetype=ruby
 autocmd BufRead,BufNewFile *.{haml} :set filetype=haml
 autocmd BufRead,BufNewFile *.{js,jsx} :set filetype=javascript
+autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo
+autocmd BufNewFile,BufRead *.[Tt]odo.txt set filetype=todo
+autocmd BufNewFile,BufRead [Dd]one.txt set filetype=todo
+autocmd BufNewFile,BufRead *.[Dd]one.txt set filetype=todo
 
 " Set up spell checking
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
@@ -87,15 +123,6 @@ function! s:setupSpell()
   set spell
 endfunction
 
-" Set MacVim font
-set guifont=Fira\ Code:h18,Monaco:h17
-if exists("&macligatures")
-  set macligatures
-endif
-
-" Hide GUI toolbar
-set guioptions-=T
-
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
 " Invoke buffer listing with CTRL+L
@@ -103,12 +130,6 @@ nnoremap <C-l> :CtrlPBuffer<cr>
 
 " Use the silver searcher for grep
 set grepprg=ag\ --nogroup\ --nocolor
-
-" Command to turn hash rockets into new style Ruby hashes
-command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
-
-" Allow vim fugitive :Gbrowse on XING GitHub Enterprise
-let g:fugitive_github_domains = ['source.xing.com']
 
 " Hard mode settings
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
@@ -130,11 +151,7 @@ let g:syntastic_javascript_checkers = ['standard']
 " Prevent markdown folding
 let g:vim_markdown_folding_disabled = 1
 
-" Enable Goyo by default in markdown files
-autocmd FileType {markdown} :Goyo
-
 " Source local configuration if existing
 if filereadable(expand("~/.vimrc.local"))
   source $HOME/.vimrc.local
 endif
-
