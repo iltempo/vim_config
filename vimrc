@@ -9,18 +9,20 @@ filetype on
 
 colorscheme antares
 
+" == Text editing with Goyo and Limelight ==
+
 " Enable Goyo by default in markdown files
 "autocmd FileType markdown Goyo
 
-" Start Limelight with Goyo
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+let g:limelight_default_coefficient = 0.5
 
 function! s:goyo_enter()
+  set wrap
   let b:quitting = 0
   let b:quitting_bang = 0
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+
   Limelight
 endfunction
 
@@ -38,7 +40,9 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
-let g:limelight_conceal_ctermfg = 'gray'
+nmap <silent> <leader>m :Goyo<CR>
+
+" == other settings ==
 
 let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
 let g:airline#extensions#ale#enabled = 1
