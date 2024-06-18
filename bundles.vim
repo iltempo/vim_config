@@ -10,37 +10,40 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-vinegar'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'rking/ag.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'wikitopian/hardmode'
-Plugin 'tpope/vim-surround'
-
-Plugin 'flazz/vim-colorschemes'
-Plugin 'fatih/vim-go'
+" UI plugins
 Plugin 'xolox/vim-misc'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'bwmcadams/vim-deckset'
+Plugin 'vim-airline/vim-airline'
 
+" File navigation plugins
+Plugin 'tpope/vim-vinegar'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rking/ag.vim'
+
+" Text editing plugins
 Plugin 'freitass/todo.txt-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 
-Plugin 'tpope/vim-rails'
+" Coding plugins
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'wikitopian/hardmode'
+Plugin 'tpope/vim-surround'
+Plugin 'fatih/vim-go'
+Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-haml'
 Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-test/vim-test'
+
+" AI plugins
 Plugin 'github/copilot.vim'
 
 " All of your Plugins must be added before the following line
