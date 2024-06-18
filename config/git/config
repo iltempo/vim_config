@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.config/git/ignore
+	autocrlf = input
 [include]
 	path = ~/.config/git/user.local
 	path = ~/.config/git/codesign.local
@@ -29,5 +30,5 @@
 	smudge = git-lfs smudge -- %f
 [merge]
 	tool = vimdiff
-[gpg]
-	program = gpg2
+[user]
+	name = Alexander Greim

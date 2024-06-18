@@ -1,4 +1,5 @@
 .netrwhist
 *.swp
+.ctags
 tags
 .DS_Store
