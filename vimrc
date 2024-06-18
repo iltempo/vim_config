@@ -7,7 +7,10 @@ syntax enable
 filetype plugin on
 filetype on
 
-colorscheme antares
+colorscheme pencil
+" Enable 24-bit RGB color in the terminal
+" This is needed to make Goyo and Limelight work properly
+set termguicolors
 
 " == Text editing with Goyo and Limelight ==
 
@@ -20,11 +23,14 @@ function! s:setupSpell()
 endfunction
 
 function! s:setupText()
+  " wrap long lines
   set wrap
+  " wrap lines at word boundaries
+  set linebreak
 endfunction
 
 " Enable Goyo by default in markdown files
-"au FileType markdown Goyo
+au FileType markdown Goyo
 
 let g:limelight_default_coefficient = 0.5
 let g:goyo_width = 80
@@ -49,11 +55,12 @@ function! s:goyo_leave()
   endif
 endfunction
 
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
+autocmd User GoyoEnter call <SID>goyo_enter()
+autocmd User GoyoLeave call <SID>goyo_leave()
 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" Start Limelight when Goyo is entered
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
 
 nmap <silent> <leader>m :Goyo<CR>
 
