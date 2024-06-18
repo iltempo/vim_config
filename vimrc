@@ -11,8 +11,20 @@ colorscheme antares
 
 " == Text editing with Goyo and Limelight ==
 
+autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
+autocmd FileType {text,markdown,mail,gitcommit} call s:setupText()
+
+function! s:setupSpell()
+  set spell spelllang=en_us,de_de
+  set spell
+endfunction
+
+function! s:setupText()
+  set wrap
+endfunction
+
 " Enable Goyo by default in markdown files
-  "au FileType markdown Goyo
+"au FileType markdown Goyo
 
 let g:limelight_default_coefficient = 0.5
 let g:goyo_width = 80
@@ -116,15 +128,6 @@ autocmd BufRead,BufNewFile *.{txt} setfiletype text
 autocmd BufRead,BufNewFile *.{rb,erb,rake} setfiletype ruby
 autocmd BufRead,BufNewFile *.{haml} setfiletype haml
 autocmd BufRead,BufNewFile *.{js,jsx} setfiletype javascript
-
-" Set up spell checking
-autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
-
-function! s:setupSpell()
-  set spell spelllang=en_us,de_de
-  set spell
-  set wrap
-endfunction
 
 " Use git for file listing. That way git ignored files will not be shown.
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
