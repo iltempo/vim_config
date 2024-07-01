@@ -8,11 +8,21 @@ filetype plugin on
 filetype on
 
 colorscheme pencil
+
+
+" Rename tmux window to the current file name
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+
+"
+" == Text editing with Goyo and Limelight ==
+"
+"set autoread " Automatically reload files when changed outside of Vim
+au FocusGained,BufEnter * :silent! ! " Reload the file when it changes outside of Vim
+au FocusLost,WinLeave * :silent! wa " Save the file when leaving Vim
+
 " Enable 24-bit RGB color in the terminal
 " This is needed to make Goyo and Limelight work properly
 set termguicolors
-
-" == Text editing with Goyo and Limelight ==
 
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupSpell()
 autocmd FileType {text,markdown,mail,gitcommit} call s:setupText()
@@ -64,7 +74,9 @@ autocmd User GoyoLeave Limelight!
 
 nmap <silent> <leader>m :Goyo<CR>
 
+"
 " == other settings ==
+"
 
 let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
 let g:airline#extensions#ale#enabled = 1
