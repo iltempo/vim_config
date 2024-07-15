@@ -39,6 +39,12 @@ function! s:setupText()
   set linebreak
 endfunction
 
+autocmd FileType todo call s:setupTodo()
+
+function! s:setupTodo()
+  setlocal nobackup
+endfunction
+
 " Enable Goyo by default in markdown files
 au FileType markdown Goyo
 
