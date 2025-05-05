@@ -27,6 +27,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'ervandew/supertab'
 
 " Coding plugins
 Plugin 'scrooloose/nerdcommenter'
@@ -44,7 +45,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-test/vim-test'
 
 " AI plugins
-Plugin 'github/copilot.vim'
+"Plugin 'github/copilot.vim'
+Plugin 'MunifTanjim/nui.nvim'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'folke/trouble.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'jackMort/ChatGPT.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
