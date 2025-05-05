@@ -46,11 +46,7 @@ Plugin 'vim-test/vim-test'
 
 " AI plugins
 "Plugin 'github/copilot.vim'
-Plugin 'MunifTanjim/nui.nvim'
-Plugin 'nvim-lua/plenary.nvim'
-Plugin 'folke/trouble.nvim'
-Plugin 'nvim-telescope/telescope.nvim'
-Plugin 'jackMort/ChatGPT.nvim'
+Plugin 'Exafunction/windsurf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
