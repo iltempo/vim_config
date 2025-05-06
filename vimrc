@@ -1,5 +1,8 @@
 :set filetype=vim
 
+" Define the pyenv Python location to avoid loading pyenv
+let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python'
+
 " Why does it have to be an explicit path here?
 source ~/.vim/bundles.vim
 
@@ -39,6 +42,8 @@ function! s:setupText()
   set linebreak
 endfunction
 
+" Load Python for due date additional highlighting support
+let g:todo_load_python = 1
 autocmd FileType todo call s:setupTodo()
 
 function! s:setupTodo()
