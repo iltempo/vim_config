@@ -26,12 +26,6 @@ task :link_config_files do
     ln_s(vimrc, nvim_conf)
   end
 
-  alacritty_conf_dir = File.expand_path('~/.config/alacritty')
-  alacritty_dir = File.expand_path('config/alacritty/')
-  unless File.symlink?(alacritty_conf_dir)
-    ln_s(alacritty_dir, alacritty_conf_dir)
-  end
-
   git_conf_legacy = File.expand_path('~/.gitconfig')
   if File.exist?(git_conf_legacy)
     puts 'Old git config file exists at ~/.gitconfig. Please remove and run again.'

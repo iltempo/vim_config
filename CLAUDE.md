@@ -11,14 +11,13 @@ This is a personal Vim/Neovim configuration repository that uses Vundle for plug
 The configuration is split into modular files:
 - `vimrc` - Main configuration file with editor settings, autocmds, and plugin configuration
 - `bundles.vim` - Vundle plugin definitions and initialization
-- `config/` - Contains configuration for related tools (Alacritty terminal, Git)
+- `config/` - Contains configuration for related tools (Git)
 - `tmux.conf` - Tmux configuration (managed alongside Vim config)
 
 The setup creates symlinks from this repository to:
 - `~/.vimrc` and `~/.gvimrc`
 - `~/.config/nvim/init.vim` (Neovim uses the same vimrc)
 - `~/.tmux.conf`
-- `~/.config/alacritty/` (terminal emulator config)
 - `~/.config/git/` (git configuration files)
 
 ## Common Commands
@@ -27,7 +26,6 @@ The setup creates symlinks from this repository to:
 ```bash
 # Install dependencies
 brew install neovim tmux fish gnupg
-brew install --cask alacritty
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
 
