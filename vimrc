@@ -58,38 +58,18 @@ let g:goyo_width = 80
 let g:goyo_height = '85%'
 let g:goyo_linenr = 0
 
-function! s:goyo_enter()
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd User GoyoEnter call <SID>goyo_enter()
-autocmd User GoyoLeave call <SID>goyo_leave()
-
 " Start Limelight when Goyo is entered
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight! | quit
 
+" Exit Vim after saving when leaving Limelight
 nmap <silent> <leader>m :Goyo<CR>
 
 "
 " == other settings ==
 "
 
-let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['jslint']}
+let b:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['biome']}
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_enter = 1
