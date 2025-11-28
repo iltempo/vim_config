@@ -4,7 +4,7 @@ My vim config makes use of [Vundle](https://github.com/gmarik/vundle) to manage 
 
 ## Installation
 
-    brew install neovim tmux fish gnupg
+    brew install neovim tmux
     brew tap homebrew/cask-fonts
     brew install --cask font-jetbrains-mono
 

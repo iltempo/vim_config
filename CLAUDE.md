@@ -25,7 +25,7 @@ The setup creates symlinks from this repository to:
 ### Initial Setup
 ```bash
 # Install dependencies
-brew install neovim tmux fish gnupg
+brew install neovim tmux
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
 
