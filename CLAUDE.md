@@ -26,7 +26,7 @@ The setup creates symlinks from this repository to:
 ```bash
 # Install dependencies
 brew install neovim tmux
-brew install --cask font-jetbrains-mono
+brew install --cask font-jetbrains-mono ghostty
 
 # Install configuration via bootstrap script
 curl -Lo- http://bit.ly/vim_config | bash
