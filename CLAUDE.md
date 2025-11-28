@@ -28,6 +28,9 @@ The setup creates symlinks from this repository to:
 brew install neovim tmux
 brew install --cask font-jetbrains-mono ghostty
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Install configuration via bootstrap script
 curl -Lo- http://bit.ly/vim_config | bash
 ```

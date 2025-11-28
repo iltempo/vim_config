@@ -6,6 +6,7 @@ My vim config makes use of [Vundle](https://github.com/gmarik/vundle) to manage 
 
     brew install neovim tmux
     brew install --cask font-jetbrains-mono ghostty
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     curl -Lo- http://bit.ly/vim_config | bash
 
