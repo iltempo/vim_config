@@ -10,7 +10,7 @@ syntax enable
 filetype plugin on
 filetype on
 
-colorscheme pencil
+colorscheme sorbet
 
 
 " Rename tmux window to the current file name
