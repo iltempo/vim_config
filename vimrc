@@ -1,7 +1,8 @@
 :set filetype=vim
 
 " Define the pyenv Python location to avoid loading pyenv
-let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python'
+"let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python'
+let g:python3_host_prog = expand('~/.local/share/uv/tools/pynvim/bin/python')
 
 " Why does it have to be an explicit path here?
 source ~/.vim/bundles.vim
